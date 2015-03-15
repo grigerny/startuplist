@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  http_basic_authenticate_with name: "admin", password: "12345", except: [:index, :show, :new] 
+  http_basic_authenticate_with name: "grigerny", password: "6764", except: [:index, :show, :new, :create] 
 
   # GET /posts
   # GET /posts.json

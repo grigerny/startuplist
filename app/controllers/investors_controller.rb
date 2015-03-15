@@ -1,5 +1,6 @@
 class InvestorsController < ApplicationController
   before_action :set_investor, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "grigerny", password: "6764", except: [:index, :show, :new, :create] 
 
   # GET /investors
   # GET /investors.json
