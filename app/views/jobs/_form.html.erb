@@ -1,0 +1,40 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row-fluid">
+  Location:
+  <div class="field">
+  <%=   f.text_field :location %></br>
+  </div>
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "What's the job about?" %></br>
+  </div>
+  Compensation:
+  <div class="field">
+  <%= f.text_field :compensation %> </br>
+  </div>
+  Email: 
+  <div class="field">
+  <%= f.text_field :contact_info %></br></br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add to Jobs" %>
+  </div>
+  </div>
+<% end %>

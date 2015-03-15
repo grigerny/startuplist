@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<center><div class="category-title"> <%= link_to 'List a Job', new_job_path %></div></center></br>
+
+  <tbody>
+    <% @jobs.reverse.each do |job| %>
+      <tr>
+       <td><div class="time">Last updated <%= time_ago_in_words(job.created_at) %> ago </div></td>
+        <td><%= link_to job_path(job) do %> 
+        <div class="post-title"><%= job.title %></div></br>
+        <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>
