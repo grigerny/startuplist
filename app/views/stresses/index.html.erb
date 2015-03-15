@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<center><div class="category-title"> <%= link_to 'Post Your AHHHHHHHHH', new_stress_path %></div></center></br>
+
+  <tbody>
+    <% @stresses.reverse.each do |stress| %>
+      <tr>
+       <td><div class="time">Last updated <%= time_ago_in_words(stress.created_at) %> ago </div></td>
+        <td><%= link_to stress_path(stress) do %> 
+        <div class="post-title"><%= stress.title %></div></br>
+        <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>

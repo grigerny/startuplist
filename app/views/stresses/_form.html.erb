@@ -1,0 +1,25 @@
+<%= form_for(@stress) do |f| %>
+  <% if @stress.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stress.errors.count, "error") %> prohibited this stress from being saved:</h2>
+
+      <ul>
+      <% @stress.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "Let it all out...it's ok, we're with you!" %></br>
+  </div>
+  <div class="actions">
+    <%= f.submit "Add New AHHHHHHHHH" %>
+  </div>
+<% end %>
