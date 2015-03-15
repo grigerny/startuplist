@@ -1,0 +1,32 @@
+<%= form_for(@investor) do |f| %>
+  <% if @investor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@investor.errors.count, "error") %> prohibited this investor from being saved:</h2>
+
+      <ul>
+      <% @investor.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row-fluid">
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "What types of projects are you looking to invest in?" %></br>
+  </div>
+  Email: 
+  <div class="field">
+  <%= f.text_field :contact_info %></br></br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add to Investor" %>
+  </div>
+  </div>
+<% end %>
