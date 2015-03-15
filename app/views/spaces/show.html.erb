@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<div class="category-title"><%= @space.title %></div></br>
+<%= @space.body %></br></br>
+Contact: <%= mail_to @space.contact_info %></br>
+
+
+<%= link_to 'Back', spaces_path %>

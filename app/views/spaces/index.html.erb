@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<center><div class="category-title"> <%= link_to 'List a Space', new_space_path %></div></center></br>
+
+  <tbody>
+    <% @spaces.reverse.each do |space| %>
+      <tr>
+       <td><div class="time">Last updated <%= time_ago_in_words(space.created_at) %> ago </div></td>
+        <td><%= link_to space_path(space) do %> 
+        <div class="post-title"><%= space.title %></div></br>
+        <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>
