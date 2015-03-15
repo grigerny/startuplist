@@ -29,7 +29,7 @@ class SpacesController < ApplicationController
   # POST /spaces.json
   def create
     @post = Post.last
-    @space = Space.new(space_params)
+    @space = Space.create(space_params)
 
     respond_to do |format|
       if @space.save
@@ -45,6 +45,7 @@ class SpacesController < ApplicationController
   # PATCH/PUT /spaces/1
   # PATCH/PUT /spaces/1.json
   def update
+    @space = Space.find(params[:id])
     respond_to do |format|
       if @space.update(space_params)
         format.html { redirect_to @space, notice: 'Space was successfully updated.' }
@@ -74,6 +75,6 @@ class SpacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def space_params
-      params[:space]
+      params.require(:space).permit(:body, :title, :contact_info, :location)
     end
 end
