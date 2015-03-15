@@ -1,5 +1,6 @@
 class StressesController < ApplicationController
   before_action :set_stress, only: [:show, :edit, :update, :destroy]
+  http_basic_authenticate_with name: "grigerny", password: "6764", except: [:index, :show, :new] 
 
   # GET /stresses
   # GET /stresses.json
