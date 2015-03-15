@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :marketplaces
+
   resources :jobs
 
   resources :events

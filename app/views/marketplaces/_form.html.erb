@@ -1,0 +1,37 @@
+<%= form_for(@marketplace) do |f| %>
+  <% if @marketplace.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@marketplace.errors.count, "error") %> prohibited this marketplace from being saved:</h2>
+
+      <ul>
+      <% @marketplace.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row-fluid">
+  Location:
+  <div class="field">
+  <%=   f.text_field :location %></br>
+  </div>
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "What are you selling?" %></br>
+  </div>
+  Email: 
+  <div class="field">
+  <%= f.text_field :contact_info %></br></br>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Add to Marketplace" %>
+  </div>
+  </div>
+<% end %>
