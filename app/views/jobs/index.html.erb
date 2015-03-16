@@ -7,7 +7,7 @@
       <tr>
        <td><div class="time">Last updated <%= time_ago_in_words(job.created_at) %> ago </div></td>
         <td><%= link_to job_path(job) do %> 
-        <div class="post-title"><%= job.title %> - <%= event.location %></div></br>
+        <div class="post-title"><%= job.title %> - <%= job.location %></div></br>
         <% end %> </td>
       </tr>
     <% end %>

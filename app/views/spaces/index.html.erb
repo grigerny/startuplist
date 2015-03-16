@@ -7,7 +7,7 @@
       <tr>
        <td><div class="time">Last updated <%= time_ago_in_words(space.created_at) %> ago </div></td>
         <td><%= link_to space_path(space) do %> 
-        <div class="post-title"><%= space.title %> - <%= event.location %></div></br>
+        <div class="post-title"><%= space.title %> - <%= space.location %></div></br>
         <% end %> </td>
       </tr>
     <% end %>

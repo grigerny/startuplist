@@ -7,7 +7,7 @@
       <tr>
        <td><div class="time">Last updated <%= time_ago_in_words(marketplace.created_at) %> ago </div></td>
         <td><%= link_to marketplace_path(marketplace) do %> 
-        <div class="post-title"><%= marketplace.title %> - <%= event.location %></div></br>
+        <div class="post-title"><%= marketplace.title %> - <%= marketplace.location %></div></br>
         <% end %> </td>
       </tr>
     <% end %>
