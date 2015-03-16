@@ -24,8 +24,8 @@
 <div class="row-fluid">
 <div class="span12">
 <div class="category-title">What's New</div></br>
-<div class="post-title"><%= @post.title %></div>
-<div class="post-body"><%= @post.body %></div>
+<div class="post-title"><%= @post.title rescue nil %></div>
+<div class="post-body"><%= @post.body rescue nil %></div>
 </div>
 </div>
 <hr>	
