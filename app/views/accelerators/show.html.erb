@@ -3,5 +3,6 @@
 <div class="category-title"><%= @accelerator.title %></div></br>
 Location: <%= @accelerator.location %></br>
 <%= auto_link(simple_format(@accelerator.body)) %></br></br>
+Contact: <%= mail_to @accelerator.contact_info %></br>
 
 <%= link_to 'Back', accelerators_path %>
