@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= tinymce %>
+
 
 
 <div class="row-fluid">
@@ -23,7 +23,7 @@
   <div class="field">
    <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Tell us what you are looking for in a co-founder" %></br>
   </div>
-
+  <%= tinymce %>
   Compensation:
   <div class="field">
   <%= f.text_field :compensation %> </br>
@@ -38,4 +38,3 @@
   </div>
   </div>
 <% end %>
-
