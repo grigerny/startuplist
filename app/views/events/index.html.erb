@@ -7,7 +7,7 @@
       <tr>
        <td><div class="time">Last updated <%= time_ago_in_words(event.created_at) %> ago </div></td>
         <td><%= link_to event_path(event) do %> 
-        <div class="post-title"><%= event.title %></div></br>
+        <div class="post-title"><%= event.title %> - <%= event.location %></div></br>
         <% end %> </td>
       </tr>
     <% end %>
