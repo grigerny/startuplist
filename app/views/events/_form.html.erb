@@ -22,12 +22,12 @@
   </div>
   Body:
   <div class="field">
-   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "Tell us about the event." %></br>
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Tell us about the event." %></br>
   </div>
-
 
   <div class="actions">
     <%= f.submit "Add to Events" %>
   </div>
   </div>
 <% end %>
+ <%= tinymce %>

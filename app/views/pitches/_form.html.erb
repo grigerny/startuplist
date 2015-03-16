@@ -18,7 +18,7 @@
   </div>
   Body:
   <div class="field">
-   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "Tell us about your startup" %></br>
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Tell us about your startup" %></br>
   </div>
   Link:
   <div class="field">
@@ -34,3 +34,4 @@
     <%= f.submit "Add New Pitch" %>
   </div>
 <% end %>
+<%= tinymce %>

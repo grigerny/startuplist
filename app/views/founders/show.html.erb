@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="category-title"><%= @founder.title %></div></br>
-<%= @founder.body %></br></br>
+<%= simple_format(@founder.body) %></br></br>
 Compensation: <%= @founder.compensation %></br>
 Contact: <%= mail_to @founder.contact_info %></br>
 

@@ -17,9 +17,10 @@
   </div>
   Body:
   <div class="field">
-   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "Let it all out...it's ok, we're with you!" %></br>
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Let it all out...it's ok, we're with you!" %></br>
   </div>
   <div class="actions">
     <%= f.submit "Add New AHHHHHHHHH" %>
   </div>
 <% end %>
+<%= tinymce %>

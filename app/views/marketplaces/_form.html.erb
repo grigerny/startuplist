@@ -22,7 +22,7 @@
   </div>
   Body:
   <div class="field">
-   <%= f.text_area :body, :class=> "text-area-field", :placeholder => "What are you selling?" %></br>
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "What are you selling?" %></br>
   </div>
   Email: 
   <div class="field">
@@ -35,3 +35,4 @@
   </div>
   </div>
 <% end %>
+<%= tinymce %>
