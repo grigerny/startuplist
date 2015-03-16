@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :accelerators
+
   resources :stresses
 
   resources :investors

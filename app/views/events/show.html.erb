@@ -2,6 +2,6 @@
 
 <div class="category-title"><%= @event.title %></div></br>
 Location: <%= @event.location %></br>
-<%= simple_format(@event.body) %></br></br>
+<%= auto_link(simple_format(@event.body)) %></br></br>
 
 <%= link_to 'Back', events_path %>

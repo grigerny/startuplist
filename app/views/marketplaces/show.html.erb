@@ -2,7 +2,7 @@
 
 <div class="category-title"><%= @marketplace.title %></div></br>
 Location: <%= @marketplace.location %></br>
-<%= simple_format(@marketplace.body) %></br></br>
+<%= auto_link(simple_format(@marketplace.body)) %></br></br>
 Contact: <%= mail_to @marketplace.contact_info %></br>
 
 

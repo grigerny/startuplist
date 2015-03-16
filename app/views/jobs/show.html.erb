@@ -2,7 +2,7 @@
 
 <div class="category-title"><%= @job.title %></div></br>
 Location: <%= @job.location %></br>
-<%= simple_format(@job.body) %></br></br>
+<%= auto_link(simple_format(@job.body)) %></br></br>
 Compensation: <%= @job.compensation %></br>
 Contact: <%= mail_to @job.contact_info %></br>
 

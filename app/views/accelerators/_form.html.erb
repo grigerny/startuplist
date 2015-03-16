@@ -1,0 +1,37 @@
+<%= form_for(@accelerator) do |f| %>
+  <% if @accelerator.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accelerator.errors.count, "error") %> prohibited this accelerator from being saved:</h2>
+
+      <ul>
+      <% @accelerator.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row-fluid">
+  Location:
+  <div class="field">
+  <%=   f.text_field :location %></br>
+  </div>
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Tell us about the event." %></br>
+  </div>
+  Email: 
+  <div class="field">
+  <%= f.text_field :contact_info %></br></br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add to Events" %>
+  </div>
+  </div>
+<% end %>
+ <%= tinymce %>

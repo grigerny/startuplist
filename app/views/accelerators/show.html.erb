@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<div class="category-title"><%= @accelerator.title %></div></br>
+Location: <%= @accelerator.location %></br>
+<%= auto_link(simple_format(@accelerator.body)) %></br></br>
+
+<%= link_to 'Back', accelerators_path %>

@@ -2,7 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="category-title"><%= @space.title %></div></br>
-<%= simple_format(@space.body) %></br></br>
+<%= auto_link(simple_format(@space.body)) %></br></br>
 Contact: <%= mail_to @space.contact_info %></br>
 
 
