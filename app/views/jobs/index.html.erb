@@ -1,7 +1,8 @@
+
 <p id="notice"><%= notice %></p>
 
 <center><div class="category-title"> <%= link_to 'Post a Job', new_job_path %></div></center></br>
-
+  <%= link_to 'Back', root_url %>
   <tbody>
     <% @jobs.reverse.each do |job| %>
       <tr>
@@ -12,4 +13,24 @@
       </tr>
     <% end %>
   </tbody>
-  <%= link_to 'Back', root_url %>
+<hr>
+   <a style="text-decoration:none" href="http://www.simplyhired.com/" rel="nofollow"><img src="http://www.simply-partner.com/static/_/img/sh-logo-wide.png" alt="jobs by simply hired" title="simply hired job feed"></a>
+
+ <% require 'open-uri' %>
+ <% doc = Nokogiri::HTML(open("http://api.simplyhired.com/a/jobs-api/xml-v2/q-startup?pshid=100578&ssty=2&cflg=r&auth=be37420715aaec1555e44722ce10243913fd6f48.100578&clip=142.255.111.133")) %>
+
+</br></br>
+  <% doc.xpath(' //jt').each do |link| %>
+   <% a = doc.xpath('//src').map { |link| link['url'] } %>
+   <% b = a.to_s %>
+   <% c = b[2..b.length] %>
+   <% c[0..-3] %> 
+  <a href="<%= c %>" onMouseDown="xml_sclk(this);">View Job</a></br>
+  <div class="post-title"><%= link.inner_html %></div><hr>
+  <% end %>
+
+<script type="text/javascript" src="http://api.simplyhired.com/c/jobs-api/js/xml-v2.js"></script>
+
+
+
+
