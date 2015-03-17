@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
-  devise_for :users
-  resources :questions
+  
+  resources :questions do 
+    resources :comments
+  end
 
   resources :accelerators
 
