@@ -11,7 +11,20 @@
     </div>
   <% end %>
 
+
+ <div class="row-fluid">
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "What's the job about?" %></br>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add to Ask & Answer" %>
+  </div>
   </div>
 <% end %>
+<%= tinymce %>

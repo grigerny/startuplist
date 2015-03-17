@@ -1,25 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Questions</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<center><div class="category-title"> <%= link_to 'Post to Ask & Answer', new_question_path %></div></center></br>
 
   <tbody>
-    <% @questions.each do |question| %>
+    <% @questions.reverse.each do |question| %>
       <tr>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       <td><div class="time">Last updated <%= time_ago_in_words(question.created_at) %> ago </div></td>
+        <td><%= link_to question_path(question) do %> 
+        <div class="post-title"><%= question.title %></div></br>
+        <% end %> </td>
       </tr>
     <% end %>
   </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
+  <%= link_to 'Back', root_url %>

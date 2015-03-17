@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_question_path(@question) %> |
+<div class="category-title"><%= @question.title %></div></br>
+<%= auto_link((simple_format(@question.body))) %>
+
 <%= link_to 'Back', questions_path %>
