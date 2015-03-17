@@ -38,6 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'rails_autolink'
   gem 'nokogiri', '~> 1.6.6.2'
   gem 'ransack'
+  gem 'devise', :git => 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
