@@ -13,5 +13,9 @@ class HomeController < ApplicationController
     @stresses = Stress.all
 
     @activities = (@events + @founders + @fundings + @investors + @jobs + @marketplaces + @pitches + @spaces + @stresses).sort_by {|a| a.created_at}.reverse
-	end
+	
+    q = params[:q]
+    @founders = Founder.search(title_cont: q).result
+    @jobs = Job.search(title_cont: q).result
+    end
 end

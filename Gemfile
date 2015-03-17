@@ -36,6 +36,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem "twitter-bootstrap-rails"
   gem 'tinymce-rails'
   gem 'rails_autolink'
+  gem 'nokogiri', '~> 1.6.6.2'
+  gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

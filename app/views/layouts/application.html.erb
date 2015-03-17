@@ -13,22 +13,35 @@
 
 
 <div class="container">
-<div class="row-fluid">
+
+<div class="row">
   <div class="title">
      <%= link_to "The Startup Deck", root_url %>
-    </div>
-      <div class="sub-heading">
-     CLASSIFIEDS FOR ENTREPRENEURS
-     </div>
   </div>
+      <div class="sub-heading">
+        CLASSIFIEDS FOR ENTREPRENEURS
+      </div>
+</div>     
 
-<div class="row-fluid">
-<div class="span12">
-<div class="category-title">What's New</div></br>
-<div class="post-title"><%= @post.title rescue nil %></div>
-<div class="post-body"><%= @post.body rescue nil %></div>
+<div class="row">
+<div class="col-md-6">
+  <div class="category-title">What's New</div>
+</br>
+  <div class="post-title">
+  <%= @post.title rescue nil %>
+  </div>
+  <div class="post-body">
+  <%= @post.body rescue nil %>
+  </div>
 </div>
+
+  <div class="col-md-6">
+  <div class="search-bar">
+  <%= render :partial => 'layouts/header' %>
+  </div>
+  </div>
 </div>
+
 <hr>	
 </div>
 

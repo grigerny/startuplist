@@ -1,0 +1,88 @@
+<div class="container">
+
+<% @results = @accelerators + @jobs + @events + @founders + @fundings + @marketplaces + @pitches + @spaces + @stresses %>
+
+<% unless @accelerators.blank? %>
+<div class="row">
+<div class="post-title">Accelerators</div>
+<% @accelerators.each do |accelerator| %>
+<%= link_to accelerator.title, accelerator_path(accelerator)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @events.blank? %>
+<div class="row">
+<div class="post-title">Events</div>
+<% @events.each do |event| %>
+<%= link_to event.title, event_path(event)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @founders.blank? %>
+<div class="row">
+<div class="post-title">Founders</div>
+<% @founders.each do |founder| %>
+<%= link_to founder.title, founder_path(founder)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @jobs.blank? %>
+<div class="row">
+<div class="post-title">Jobs</div>
+<% @jobs.each do |job| %>
+<%= link_to job.title, job_path(job)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @marketplaces.blank? %>
+<div class="row">
+<div class="post-title">Marketplaces</div>
+<% @marketplaces.each do |marketplace| %>
+<%= link_to marketplace.title, marketplace_path(marketplace)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @pitches.blank? %>
+<div class="row">
+<div class="post-title">Pitches</div>
+<% @pitches.each do |pitch| %>
+<%= link_to pitch.title, pitch_path(pitch)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @spaces.blank? %>
+<div class="row">
+<div class="post-title">Spaces</div>
+<% @spaces.each do |space| %>
+<%= link_to space.title, space_path(space)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+<% unless @stresses.blank? %>
+<div class="row">
+<div class="post-title">HAAAAAAAAA</div>
+<% @stresses.each do |stress| %>
+<%= link_to stress.title, stress_path(stress)  %></br>
+<% end %>
+</div>
+</br>
+<% end %>
+
+
+</div>
+
+<%= link_to 'Back', root_path %>

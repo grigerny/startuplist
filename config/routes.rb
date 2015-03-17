@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  get "search" => "search#index"
+
   get '8a8618faa3115ed1.html' => 'home#8a8618faa3115ed1.html'
 
   # The priority is based upon order of creation: first created -> highest priority.
