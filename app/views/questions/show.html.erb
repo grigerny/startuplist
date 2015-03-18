@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="category-title"><%= @question.title %></div></br>
-<%= auto_link((simple_format(@question.body))) %>
+<%= auto_link(simple_format(@question.body)) %>
 
 <hr>
 <% @question.comments.each do |comment| %>
@@ -10,7 +10,7 @@
   </p>
  
   <p>
-    <%= simple_format(comment.body) %>
+    <%= auto_link(simple_format(comment.body)) %>
   </p>
 <% end %>
 
