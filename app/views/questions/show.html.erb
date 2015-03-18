@@ -14,8 +14,8 @@
   </p>
 <% end %>
 
-
-<div class="category-title">elp Answer This Question</div>
+<% if user_signed_in? %>
+<div class="category-title">Help Answer This Question</div>
 <%= form_for([@question, @question.comments.build]) do |f| %>
   <p>
     <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Can you help answer this question?" %>
@@ -26,6 +26,11 @@
   </p>
 <% end %>
 <%= tinymce %>
+
+<% else %>
+You must be signed in to answer this question. <%= link_to('Sign in with Twitter', 'http://thestartupdeck.com/users/auth/twitter')  %>  
+<% end %>
+
 
 
 
