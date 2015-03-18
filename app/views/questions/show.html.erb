@@ -15,10 +15,10 @@
 <% end %>
 
 
-<h2>Help Answer This Question</h2>
+<div class="category-title">elp Answer This Question</div>
 <%= form_for([@question, @question.comments.build]) do |f| %>
   <p>
-    <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120 %>
+    <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Can you help answer this question?" %>
   </p>
 
   <p>
