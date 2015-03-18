@@ -24,7 +24,7 @@
 
 <div class="container">
 <% if user_signed_in? %>
-You're signed in via Twitter as <%= current_user.name %> | <%= current_user.username %>   
+You're signed in via Twitter as @<%= current_user.username %>   
 <% else %>
   <%= link_to('Sign in with Twitter', 'http://thestartupdeck.com/users/auth/twitter')  %>  
 <% end %>
