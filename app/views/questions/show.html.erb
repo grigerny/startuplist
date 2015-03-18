@@ -3,6 +3,30 @@
 <div class="category-title"><%= @question.title %></div></br>
 <%= auto_link((simple_format(@question.body))) %>
 
+<hr>
+<% @question.comments.each do |comment| %>
+  <p>
+    <b><%= comment.user.name %>:</b>
+  </p>
+ 
+  <p>
+    <%= simple_format(comment.body) %>
+  </p>
+<% end %>
+
+
+<h2>Help Answer This Question</h2>
+<%= form_for([@question, @question.comments.build]) do |f| %>
+  <p>
+    <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120 %>
+  </p>
+
+  <p>
+    <%= f.submit "Add Answer" %>
+  </p>
+<% end %>
+<%= tinymce %>
+
 
 
 

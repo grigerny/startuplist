@@ -27,11 +27,11 @@ class CommentsController < ApplicationController
 
   @question = Question.find(params[:question_id])
   @comment = @question.comments.create(comment_params)
-  @comment.user_id = current_user.id #or whatever is you session name
+  @comment.user_id = current_user.id 
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
+        format.html { redirect_to question_path(@question), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }

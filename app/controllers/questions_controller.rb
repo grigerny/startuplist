@@ -12,6 +12,7 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
     @post = Post.last
+    @user = User.find(params[:id])
   end
 
   # GET /questions/new
