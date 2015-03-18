@@ -6,7 +6,7 @@
 <hr>
 <% @question.comments.each do |comment| %>
   <p>
-    <b><%= comment.user.name %>:</b>
+    <b>@<%= link_to comment.user.username, "http://www.twitter.com/#{comment.user.username}" %>:</b>
   </p>
  
   <p>
