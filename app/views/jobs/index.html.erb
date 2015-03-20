@@ -20,17 +20,14 @@
  <% doc = Nokogiri::HTML(open("http://api.simplyhired.com/a/jobs-api/xml-v2/q-startup?pshid=100578&ssty=2&cflg=r&auth=be37420715aaec1555e44722ce10243913fd6f48.100578&clip=142.255.111.133")) %>
 
 </br></br>
-  <% doc.xpath(' //jt').each do |link| %>
-   <% a = doc.xpath('//src').map { |link| link['url'] } %>
-   <% b = a.to_s %>
-   <% c = b[2..b.length] %>
-   <% c[0..-3] %> 
-  <a href="<%= c %>" onMouseDown="xml_sclk(this);">View Job</a></br>
-  <div class="post-title"><%= link.inner_html %></div><hr>
-  <% end %>
-
-<script type="text/javascript" src="http://api.simplyhired.com/c/jobs-api/js/xml-v2.js"></script>
-
-
-
-
+ 
+  
+   <% @link = doc.xpath('//src').map { |node| node['url'] } %>
+   <% @name = doc.xpath('//jt').map{ |node| node.text } %>
+   <% @name.zip @link %>
+   <% @name.zip(@link).each do |name, link| %>
+   <a href="<%= link %>" onMouseDown="xml_sclk(this);">View Job</a></br>
+   <div class="post-title"><%= name %></div>
+   <% link %></br>
+   <% end %>
+   <script type="text/javascript" src="http://api.simplyhired.com/c/jobs-api/js/xml-v2.js"></script>
