@@ -17,17 +17,19 @@
    <a style="text-decoration:none" href="http://www.simplyhired.com/" rel="nofollow"><img src="http://www.simply-partner.com/static/_/img/sh-logo-wide.png" alt="jobs by simply hired" title="simply hired job feed"></a>
 
  <% require 'open-uri' %>
- <% doc = Nokogiri::HTML(open("http://api.simplyhired.com/a/jobs-api/xml-v2/q-startup?pshid=100578&ssty=2&cflg=r&auth=be37420715aaec1555e44722ce10243913fd6f48.100578&clip=142.255.111.133")) %>
+ <% doc = Nokogiri::HTML(open("http://api.simplyhired.com/a/jobs-api/xml-v2/ws-20/q-startup?pshid=100578&ssty=2&cflg=r&auth=be37420715aaec1555e44722ce10243913fd6f48.100578&clip=142.255.111.133")) %>
 
 </br></br>
  
   
    <% @link = doc.xpath('//src').map { |node| node['url'] } %>
    <% @name = doc.xpath('//jt').map{ |node| node.text } %>
-   <% @name.zip @link %>
-   <% @name.zip(@link).each do |name, link| %>
+   <% @loc = doc.xpath('//loc').map{ |node| node.text } %>
+   <% @name.zip @link%>
+   <% @name.zip @loc %>
+   <% @name.zip(@link, @loc).each do |name, link, loc| %>
    <a href="<%= link %>" onMouseDown="xml_sclk(this);">View Job</a></br>
-   <div class="post-title"><%= name %></div>
+   <div class="post-title"><%= name %> -  <%= loc %></div>
    <% link %></br>
    <% end %>
    <script type="text/javascript" src="http://api.simplyhired.com/c/jobs-api/js/xml-v2.js"></script>
