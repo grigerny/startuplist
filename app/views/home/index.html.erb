@@ -5,11 +5,11 @@
   config.access_token_secret = "oLAUuXg4UqTPvbWWMHyBpHalpXdREKf64OBDIXr20Eh7h"
 end %>
 
+<% activities %>
+
 <% if Rails.env.production? %>
 <% client.update("New posting on thestartupdeck.com: #{@activities.first.title} #startup #vc #founder #craigslist") %>
 <% end %>
-
-
 
 
 <div class="row">
