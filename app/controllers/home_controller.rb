@@ -2,6 +2,7 @@ class HomeController < ApplicationController
 	def index
 	@post = Post.last
     
+    @accelerators = Accelerator.all
     @events = Event.all
     @founders = Founder.all
     @fundings = Funding.all
@@ -11,8 +12,9 @@ class HomeController < ApplicationController
     @pitches = Pitch.all
     @spaces = Space.all
     @stresses = Stress.all
+    @questions = Question.all
 
-    @activities = (@events + @founders + @fundings + @investors + @jobs + @marketplaces + @pitches + @spaces + @stresses).sort_by {|a| a.created_at}.reverse
+    @activities = (@accelerators + @questions + @events + @founders + @fundings + @investors + @jobs + @marketplaces + @pitches + @spaces + @stresses).sort_by {|a| a.created_at}.reverse
 	
     q = params[:q]
     @founders = Founder.search(title_cont: q).result

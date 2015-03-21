@@ -12,7 +12,6 @@ class QuestionsController < ApplicationController
   # GET /questions/1.json
   def show
     @post = Post.last
-    @user = User.find(params[:id])
   end
 
   # GET /questions/new
@@ -75,6 +74,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      params[:question].permit(:title, :body, :user_id)
+      params[:question].permit(:title, :body)
     end
 end

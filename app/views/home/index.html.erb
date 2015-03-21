@@ -1,3 +1,24 @@
+<% client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "pqP3no6J5RXNfkt9aya4ZvDUi"
+  config.consumer_secret     = "UPbObOKSszw8ODABV4Kbmf2NyIFqG2s9Pt290FmTgY0eaKsLc8"
+  config.access_token        = "37588554-8FfLTW83PfTGaQqFWsd2BPZhTlTMPbw1m6bS0U6XD"
+  config.access_token_secret = "oLAUuXg4UqTPvbWWMHyBpHalpXdREKf64OBDIXr20Eh7h"
+end %>
+
+<% if Rails.env.production? %>
+<% client.update("New posting on thestartupdeck.com: #{@activities.first.title} #startup #vc #founder #craigslist") %>
+<% end %>
+
+<div class="recently-added">
+Recently added:&nbsp
+</div>
+<div class="stream-link">
+<%= @recent_post = link_to @activities.first, :class => "stream-link" do %>
+<%= simple_format(@activities.first.title) %>
+<% end %>
+</div>
+
+
 <div class="row">
 
 <div class="col-md-4">
