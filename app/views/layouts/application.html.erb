@@ -23,13 +23,16 @@
 
 
 <div class="container">
+
 <% if user_signed_in? %>
 You're signed in via Twitter as @<%= current_user.username %>   
 <% else %>
   <%= link_to('Sign in with Twitter', 'http://thestartupdeck.com/users/auth/twitter')  %>  
 <% end %>
 
-<center><p id="notice"><%= notice %></p></center>
+<center>
+	<p id="notice"><%= notice %></p>
+</center>
 
 <div class="row">
   <div class="title">
@@ -52,13 +55,28 @@ You're signed in via Twitter as @<%= current_user.username %>
   </div>
 </div>
 
-  <div class="col-md-6">
+<div class="col-md-6">
   <div class="search-bar">
   <%= render :partial => 'layouts/header' %>
   </div>
-  </div>
 </div>
 
+</div>
+
+<div class="row">
+	<% activities %>
+	
+	<div class="col-md-8">
+		<div class="recently-added">
+		Recently added:&nbsp
+		</div>
+		<div class="stream-link">
+		<%= @recent_post = link_to @activities.first, :class => "stream-link" do %>
+		<%= simple_format(@activities.first.title) %>
+		<% end %>
+		</div>
+	</div>	
+</div>
 <hr>	
 </div>
 

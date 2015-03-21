@@ -9,14 +9,7 @@ end %>
 <% client.update("New posting on thestartupdeck.com: #{@activities.first.title} #startup #vc #founder #craigslist") %>
 <% end %>
 
-<div class="recently-added">
-Recently added:&nbsp
-</div>
-<div class="stream-link">
-<%= @recent_post = link_to @activities.first, :class => "stream-link" do %>
-<%= simple_format(@activities.first.title) %>
-<% end %>
-</div>
+
 
 
 <div class="row">
