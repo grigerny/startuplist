@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   
   
+   resources :ideas do
+  member do
+    put "like", to: "ideas#upvote"
+    put "dislike", to: "ideas#downvote"
+  end
+end
+
   resources :apps
 
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
@@ -34,6 +41,7 @@ Rails.application.routes.draw do
   resources :spaces
 
   resources :posts
+
 
   get "search" => "search#index"
 
