@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<div class="category-title"><%= @app.title %></div></br>
+Tagline: <%= @app.tagline %></br>
+<%= auto_link(simple_format(@app.body)) %></br>
+Link: <%= auto_link(simple_format(@app.link)) %><br></br>
+
+<%= link_to 'Back', apps_path %>

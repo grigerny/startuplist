@@ -11,7 +11,6 @@ end %>
 <% client.update("New posting on thestartupdeck.com: #{@activities.first.title} #startup #vc #founder #craigslist") %>
 <% end %>
 
-
 <div class="row">
 
 <div class="col-md-4">
@@ -22,12 +21,23 @@ Find opportunities for your startup.
 </div>
 
 <div class="col-md-4">
+<%= link_to apps_path, :class =>"post-title" do %>
+Apps & Products
+<% end %></br>
+New apps everyday.
+</div>
+
+<div class="col-md-4">
 <%= link_to questions_path, :class =>"post-title" do %>
 Ask & Answer
 <% end %></br>
 Reach our community of entrepreneurs.
 </div>
 
+</div>
+</br></br>
+
+<div class="row">
 
 <div class="col-md-4">
 <%= link_to events_path, :class =>"post-title" do %>
@@ -35,12 +45,6 @@ Events
 <% end %></br>
 Post and find relevant events near you.
 </div>
-
-
-</div>
-</br></br>
-
-<div class="row">
 
 <div class="col-md-4">
 <%= link_to founders_path, :class =>"post-title" do %>
@@ -56,7 +60,12 @@ Funding
 Looking for funding? Share your story.
 </div>
 
+</div>
 
+</br></br>
+
+<div class="row">
+	
 <div class="col-md-4">
 <%= link_to investors_path, :class =>"post-title" do %>
 Investors
@@ -64,11 +73,6 @@ Investors
 Want to help fund a startup? Post here.
 </div>
 
-</div>
-
-</br></br>
-
-<div class="row">
 
 <div class="col-md-4">
 <%= link_to stresses_path, :class =>"post-title" do %>
@@ -86,6 +90,10 @@ Jobs
 Find & share work opportunities.
 </div>
 
+</div>
+</br></br>
+
+<div class="row">
 
 <div class="col-md-4">
 <%= link_to spaces_path, :class =>"post-title" do %>
@@ -93,11 +101,6 @@ Office Space
 <% end %></br>
 Find & share co-working spaces here!
 </div>
-
-</div>
-</br></br>
-
-<div class="row">
 
 <div class="col-md-4">
 <%= link_to marketplaces_path, :class =>"post-title" do %>

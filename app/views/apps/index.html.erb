@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<center><div class="category-title"> <%= link_to 'Post to Apps', new_app_path %></div></center></br>
+
+<div class="post-title">Today's Apps Courtesy of
+<%= link_to(image_tag("product-hunt-horizontal-logo-red.png", :width => 150), "http://www.producthunt.com") %></div>
+
+<% client = ProductHunt::Client.new('8564f6856ef80e22f4f70bc7149aa3e4f36089e14a50b8087a50741960a411c1') %>
+<% client.posts %>
+<% client.posts.each do |attribute| %><br>
+<b><%= attribute['votes_count'] %> votes - <%= attribute['name'] %></b><br>
+<%= attribute['tagline'] %><br>
+<%= link_to "View in Product Hunt", attribute['discussion_url'] %> | <%= link_to "Direct link", attribute['redirect_url']%><br>
+<% end %>
+
+  <tbody>
+    <% @apps.reverse.each do |app| %>
+      <tr>
+       <td><div class="time">Last updated <%= time_ago_in_words(app.created_at) %> ago </div></td>
+        <td><%= link_to app_path(app) do %> 
+        <div class="post-title"><%= app.title %> - <%= app.location %></div></br>
+        <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <%= link_to 'Back', root_url %>
+

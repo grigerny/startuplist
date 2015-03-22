@@ -1,0 +1,36 @@
+<%= form_for(@app) do |f| %>
+  <% if @app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@app.errors.count, "error") %> prohibited this app from being saved:</h2>
+
+      <ul>
+      <% @app.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="row-fluid">
+  Title:
+  <div class="field">
+  <%=   f.text_field :title %></br>
+  </div>
+  Tagline:
+  <div class="field">
+  <%=   f.text_field :tagline %></br>
+  </div>
+  Body:
+  <div class="field">
+   <%= f.text_area :body, :class => "tinymce", :rows => 20, :cols => 120, :placeholder => "Tell us about your app." %></br>
+  </div><br>
+  Link:
+  <div class="field">
+   <%= f.text_area :link %></br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit App" %>
+  </div>
+<% end %>
+ <%= tinymce %>
