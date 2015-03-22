@@ -15,13 +15,13 @@
   <%= link_to 'Back', root_url %>
 <br>
 
-<div class="post-title">Today's Apps Courtesy of
-<%= link_to(image_tag("product-hunt-horizontal-logo-red.png", :width => 150), "http://www.producthunt.com") %></div>
+<div class="category-title">Today's Apps Courtesy of
+<%= link_to(image_tag("product-hunt-horizontal-logo-red.png", :width => 200), "http://www.producthunt.com") %></div>
 
 <% client = ProductHunt::Client.new('8564f6856ef80e22f4f70bc7149aa3e4f36089e14a50b8087a50741960a411c1') %>
 <% client.posts %>
 <% client.posts.each do |attribute| %><br>
-<b><%= attribute['votes_count'] %> votes - <%= attribute['name'] %></b><br>
+<div class="post-title"><%= attribute['votes_count'] %> votes - <%= attribute['name'] %></div>
 <%= attribute['tagline'] %><br>
 <%= link_to "View in Product Hunt", attribute['discussion_url'] %> | <%= link_to "Direct link", attribute['redirect_url']%><br>
 <% end %>
