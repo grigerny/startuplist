@@ -78,4 +78,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
   config.assets.precompile += %w[tinymce/tiny_mce.js tinymce/langs/en.js tinymce/themes/advanced/editor_template.js]
   config.action_mailer.default_url_options = { :host => 'tranquil-cove-9918.herokuapp.com' }
+  config.assets.compile = true
 end
