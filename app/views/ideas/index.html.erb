@@ -5,11 +5,11 @@
 <tbody>
     <% @ideas.reverse.each do |idea| %>
       <tr>
-      <% if user_signed_in? %>
+      
       <%= idea.votes_for.size %><br>
       <%= link_to "Upvote", like_idea_path(idea), method: :put %><br>
       <%= link_to "Downvote", dislike_idea_path(idea), method: :put %>
-      <% end %>
+      
        <td><div class="time">Last updated <%= time_ago_in_words(idea.created_at) %> ago </div></td>
         <td><%= link_to idea_path(idea) do %> 
         <div class="post-title"><%= idea.title %></div></br>
