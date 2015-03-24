@@ -7,8 +7,12 @@ end %>
 
 <% activities %>
 
-<% if Rails.env.production? %>
+
 <% client.update("New post on thestartupdeck.com: #{@activities.first.title} #classifieds #startup  #craigslist") %>
+<% if user_signed_in? %>
+<div class="image-css">
+<% image_tag(current_user.image) %>
+</div>
 <% end %>
 
 <div class="row">
