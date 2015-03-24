@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="category-title"><%= @investor.title %></div></br>
-<%= auto_link((simple_format(@investor.body)) %></br></br>
+<%= auto_link(simple_format(@investor.body)) %></br></br>
 Contact: <%= mail_to @investor.contact_info %></br>
 
 
