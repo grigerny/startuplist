@@ -21,9 +21,10 @@
 <% client = ProductHunt::Client.new('8564f6856ef80e22f4f70bc7149aa3e4f36089e14a50b8087a50741960a411c1') %>
 <% client.posts %>
 <% client.posts.each do |attribute| %><br>
-<div class="post-title"><%= attribute['votes_count'] %> votes - <%= attribute['name'] %></div>
+<div class="post-title">
+<%= attribute['votes_count'] %> votes - <%= link_to "#{attribute['name']}", attribute['redirect_url']%></div>
 <%= attribute['tagline'] %><br>
-<%= link_to "View in Product Hunt", attribute['discussion_url'] %> | <%= link_to "Direct link", attribute['redirect_url']%><br>
+<%= link_to "View in Product Hunt", attribute['discussion_url'] %><br>
 <% end %>
 
   
