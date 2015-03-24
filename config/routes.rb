@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  
+  resources :ideas
+
    resources :ideas do
   member do
     put "like", to: "ideas#upvote"
