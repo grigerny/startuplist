@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :questions
   acts_as_voter
 
+
   TEMP_EMAIL_PREFIX = 'change@me'
   TEMP_EMAIL_REGEX = /\Achange@me/
 
@@ -11,6 +12,8 @@ class User < ActiveRecord::Base
 devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
+  has_attached_file :avatar, :styles => { :small => "100x100>" }
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
 
   def self.find_for_oauth(auth, signed_in_resource = nil)

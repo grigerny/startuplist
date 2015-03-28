@@ -11,12 +11,19 @@ end %>
 <% client.update("New post on thestartupdeck.com: #{@activities.first.title} #classifieds #startup  #craigslist") %>
 <% end %>
 
-<% if user_signed_in? %>
-<div class="image-css">
-<% image_tag(current_user.image) %>
-
+<div class="container">
+<div class="title">Community</div>
+<div class="row">
+	<% @users.each do |user| %>
+	<div class="round">
+	<% if user.image.present? %>
+	<%= image_tag(user.image) %>
+	<% end %>
+	</div>
+	<% end %>
 </div>
-<% end %>
+</div>
+<hr>
 
 <div class="row">
 
