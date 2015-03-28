@@ -7,7 +7,7 @@
     <% @events.reverse.each do |event| %>
       <tr>
        <td>
-        <% if (event.created_at) < (24.hours.ago) %>
+        <% if (event.created_at) < (24.hours.ago) == true %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(event.created_at) %> ago </div>
