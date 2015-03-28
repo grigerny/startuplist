@@ -44,7 +44,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'twitter'
   gem 'hunting_season'
   gem 'acts_as_votable', '~> 0.10.0'
-
+  gem "paperclip"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
