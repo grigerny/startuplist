@@ -7,10 +7,10 @@
     <% @events.reverse.each do |event| %>
       <tr>
        <td>
-        <% if (event.created_at) > (24.hours.ago) %>
-        <div class="time">Last updated <%= time_ago_in_words(event.created_at) %> ago </div>
+        <% if (event.created_at) < (24.hours.ago) %>
+         <div class="time-new"><%= "Today" %> </div>
          <% else %>
-        <div class="time-new"><%= "Today" %> </div>
+         <div class="time">Last updated <%= time_ago_in_words(event.created_at) %> ago </div>
          <% end %>
        </td>
         <td><%= link_to event_path(event) do %> 
