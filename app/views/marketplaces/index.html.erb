@@ -6,7 +6,7 @@
     <% @marketplaces.reverse.each do |marketplace| %>
       <tr>
        <td>
-         <% if marketplace.created_at < 1.days.ago  %>
+         <% if marketplace.created_at < 0.days.ago  %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(marketplace.created_at) %> ago </div>

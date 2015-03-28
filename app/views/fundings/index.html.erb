@@ -6,7 +6,7 @@
     <% @fundings.reverse.each do |funding| %>
       <tr>
        <td>
-         <% if funding.created_at < 1.days.ago  %>
+         <% if funding.created_at < 0.days.ago  %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(funding.created_at) %> ago </div>
