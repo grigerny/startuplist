@@ -6,7 +6,7 @@
     <% @pitches.reverse.each do |pitch| %>
       <tr>
        <td>
-         <% if pitch.created_at < 0.days.ago  %>
+       <% if (pitch.created_at) > (24.hours.ago) == true %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(pitch.created_at) %> ago </div>

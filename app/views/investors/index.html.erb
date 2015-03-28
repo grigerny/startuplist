@@ -6,7 +6,7 @@
     <% @investors.reverse.each do |investor| %>
       <tr>
        <td>
-         <% if investor.created_at < 0.days.ago  %>
+         <% if (investor.created_at) > (24.hours.ago) == true %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(investor.created_at) %> ago </div>
