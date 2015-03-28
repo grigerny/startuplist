@@ -5,7 +5,12 @@
   <tbody>
     <% @stresses.reverse.each do |stress| %>
       <tr>
-       <td><div class="time">Last updated <%= time_ago_in_words(stress.created_at) %> ago </div></td>
+       <td><% if stress.created_at < 1.days.ago  %>
+         <div class="time-new"><%= "Today" %> </div>
+         <% else %>
+         <div class="time">Last updated <%= time_ago_in_words(stress.created_at) %> ago </div>
+         <% end %>
+         </td>
         <td><%= link_to stress_path(stress) do %> 
         <div class="post-title"><%= stress.title %></div></br>
         <% end %> </td>

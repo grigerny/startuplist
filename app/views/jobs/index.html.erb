@@ -6,7 +6,12 @@
   <tbody>
     <% @jobs.reverse.each do |job| %>
       <tr>
-       <td><div class="time">Last updated <%= time_ago_in_words(job.created_at) %> ago </div></td>
+       <td><% if job.created_at < 1.days.ago  %>
+         <div class="time-new"><%= "Today" %> </div>
+         <% else %>
+         <div class="time">Last updated <%= time_ago_in_words(job.created_at) %> ago </div>
+         <% end %>
+         </td>
         <td><%= link_to job_path(job) do %> 
         <div class="post-title"><%= job.title %> - <%= job.location %></div></br>
         <% end %> </td>

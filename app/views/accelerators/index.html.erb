@@ -5,7 +5,11 @@
   <tbody>
     <% @accelerators.reverse.each do |accelerator| %>
       <tr>
-       <td><div class="time">Last updated <%= time_ago_in_words(accelerator.created_at) %> ago </div></td>
+       <% if accelerator.created_at < 1.days.ago  %>
+         <div class="time-new"><%= "Today" %> </div>
+         <% else %>
+         <div class="time">Last updated <%= time_ago_in_words(accelerator.created_at) %> ago </div>
+         <% end %>
         <td><%= link_to accelerator_path(accelerator) do %> 
         <div class="post-title"><%= accelerator.title %> - <%= accelerator.location %></div></br>
         <% end %> </td>
