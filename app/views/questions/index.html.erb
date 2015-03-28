@@ -6,7 +6,7 @@
     <% @questions.reverse.each do |question| %>
       <tr>
        <td>
-         <% if question.created_at < 0.days.ago  %>
+         <% if (question.created_at) > (24.hours.ago) == true %>
          <div class="time-new"><%= "Today" %> </div>
          <% else %>
          <div class="time">Last updated <%= time_ago_in_words(question.created_at) %> ago </div>
