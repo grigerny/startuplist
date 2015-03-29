@@ -16,8 +16,9 @@ end %>
 <div class="row">
 	<% @users.each do |user| %>
 	<div class="round">
-	<% unless user.image.nil? %>
+	<% unless user.image.nil? || unless user.image.blank?  %>
 	<%= image_tag(user.image) %>
+	<% end %>
 	<% end %>
 	</div>
 	<% end %>
