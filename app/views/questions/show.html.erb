@@ -7,9 +7,13 @@
 <hr>
 <% @question.comments.each do |comment| %>
   <p>
-    <b>@<%= link_to comment.user.username, "http://www.twitter.com/#{comment.user.username}" %>:</b>
+  <% if comment.user.present? %>
+       <%= link_to "http://www.twitter.com/#{comment.user.username}" do %>
+       @<%= comment.user.username %>:
+        <% end %>
+    <% end %>  
   </p>
- 
+
   <p>
     <%= auto_link(simple_format(comment.body)) %>
   </p>
