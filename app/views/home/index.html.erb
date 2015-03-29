@@ -15,8 +15,8 @@ end %>
 <div class="title">Community</div>
 <div class="row">
 
+
 <% @users.each do |user| %>	
-	<div class="round">
 	<% if user.image.present? %>
 	<%= link_to "#{"http://www.twitter.com/" + user.username}" do %> 
 	<%= image_tag(user.image, :class => "no-pic-css")%>
@@ -24,7 +24,6 @@ end %>
 	<% else %>
 	<%= image_tag('icon-user-default.png', :class => "no-pic-css") %>
 	<% end %>
-	</div>
 <% end %>
 </div>
 </div>
