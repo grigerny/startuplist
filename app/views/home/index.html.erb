@@ -16,7 +16,7 @@ end %>
 <div class="row">
 	<% @users.each do |user| %>
 	<div class="round">
-	<% if user.image.present? %>
+	<% unless user.image.nil? %>
 	<%= image_tag(user.image) %>
 	<% end %>
 	</div>
