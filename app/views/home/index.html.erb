@@ -19,6 +19,8 @@ end %>
 	<div class="round">
 	<% if user.image.present? %>
 	<%= image_tag(user.image) %>
+	<% else %>
+	<%= image_tag('icon-user-default.png', :class => "no-pic-css") %>
 	<% end %>
 	</div>
 <% end %>
