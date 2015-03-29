@@ -91,16 +91,10 @@ body{
 
 
 
-img.round:hover {
-  position: absolute;
-  cursor:pointer;
-  margin-top: 5px;
-  z-index: 1 !important;
-}
-
 
 img.no-pic-css {
-  width: 10px !important;
+  float:left;
+  width: 50px !important;
   border-radius: 50%;
   -webkit-transition: margin 0.1s ease-out;
     -moz-transition: margin 0.1s ease-out;
@@ -108,7 +102,6 @@ img.no-pic-css {
 }
  
 img.no-pic-css:hover {
-  position: relative;
   cursor:pointer;
   margin-top: 5px;
   z-index: 1 !important;
