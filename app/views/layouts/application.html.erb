@@ -10,6 +10,12 @@
   <link href="<%= image_path('TSD.ico') %>" rel="icon">
 </head>
 <body>
+<div class="feedback-color">
+<%= link_to image_tag("https://www.heeduser.com/supfiles/Images/feedback_button_en_rm.png"), "http://tsd.heeduser.com",:target => '_blank' %>
+</div>
+
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,24 +28,6 @@
 </script>
 
 <div class="container">
-
-<!-- HeedUser feedback widget code starts here -->
-<script>
-(function () { var hu = document.createElement("script"); hu.type = "text/javascript"; hu.async = true; hu.src = "//www.heeduser.com/supfiles/Script/widget.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hu, s); })()
-</script>
-<script>
-var _heeduser = {
-type: "button",
-community: "tsd",
-placement: "middle-right",
-color: "#458CC8"
-}
-var heeduser_url = "https://www.heeduser.com/FeedbackWidget/Widget.aspx?community=" + _heeduser.community + "&sso=" + encodeURIComponent(_heeduser.sso_token);
-document.write('<a id="heeduser_wb" href="JavaScript:heeduser_openwidget(heeduser_url)" class="' + _heeduser.placement + '" style="background:' + _heeduser.color + '"><img src="https://www.heeduser.com/supfiles/Images/feedback_button_en_rm.png"></a>');
-</script>
-<!-- HeedUser feedback widget code ends here -->
-
-
 
 
 <% if user_signed_in? %>
@@ -94,6 +82,9 @@ You're signed in as  <b>@<%= current_user.username %></b> <%= link_to 'Edit prof
 	</div>	
 </div>	
 </div>
+
+
+
 
 
 <div class="container">
