@@ -5,11 +5,7 @@
   config.access_token_secret = "oLAUuXg4UqTPvbWWMHyBpHalpXdREKf64OBDIXr20Eh7h"
 end %>
 
-<% activities %>
 
-<% if Rails.env.production? %>
-<% client.update("New post on thestartupdeck.com: #{@activities.first.title} #classifieds #startup  #craigslist") %>
-<% end %>
 
 
 <div class="title-community">Community</div>
